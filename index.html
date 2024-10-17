@@ -10,8 +10,32 @@
 
 <body>
 
+  <header class="header">
+    <div class="header__logo-container">
+      <picture class="header__logo-picture">
+        <img class="header__logo-image" src="./images/cabecera/image 1.svg" alt="Logo de AluraGeek">
+      </picture>
+      <h1 class="header__title">Alura<strong>Geek</strong></h1>
+    </div>
 
-  <script src="./js/"></script>
+    <nav class="header__nav" aria-label="Navegación principal">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#" aria-label="Ver catálogo de productos">Catálogo</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#" aria-label="Agregar productos">Agregar productos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="header__theme-toggle" aria-label="Cambiar a tema oscuro">
+      <img class="header__theme-icon" src="./images/icon-moon.svg" alt="Icono para cambiar tema">
+    </button>
+  </header>
+
+
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
