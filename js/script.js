@@ -1,17 +1,34 @@
-const themeToggleButton = document.querySelector('.header__theme-toggle');
-const themeIcon = document.querySelector('.header__theme-icon');
+// Selección de elementos
+const botonCambioTema = document.querySelector('.header__theme-toggle');
+const iconoTema = document.querySelector('.header__theme-icon');
 
-themeToggleButton.addEventListener('click', () => {
-  // Cambiar el tema agregando o quitando la clase 'dark-theme' al body
+// Cambiar entre tema claro y oscuro
+function cambiarTema() {
   document.body.classList.toggle('dark-theme');
 
-  // Cambiar el icono del botón entre "moon" y "sun"
-  if (document.body.classList.contains('dark-theme')) {
-    themeIcon.src = './images/icon-sun.svg';  // Cambia el icono a "sol"
-    themeToggleButton.setAttribute('aria-label', 'Cambiar a tema claro');  // Actualiza la accesibilidad
-  } else {
-    themeIcon.src = './images/icon-moon.svg';  // Cambia el icono a "luna"
-    themeToggleButton.setAttribute('aria-label', 'Cambiar a tema oscuro');  // Actualiza la accesibilidad
-  }
-});
+  iconoTema.src = document.body.classList.contains('dark-theme')
+    ? './images/icon-sun.svg'
+    : './images/icon-moon.svg';
 
+  botonCambioTema.setAttribute('aria-label', document.body.classList.contains('dark-theme')
+    ? 'Cambiar a tema claro'
+    : 'Cambiar a tema oscuro');
+}
+
+// Evento para el botón
+botonCambioTema.addEventListener('click', cambiarTema);
+
+// Establecer tema según la hora local
+(function () {
+  const horaActual = new Date().getHours();
+
+  if (horaActual >= 19 || horaActual < 7) {
+    document.body.classList.add('dark-theme');
+    iconoTema.src = './images/icon-sun.svg';
+    botonCambioTema.setAttribute('aria-label', 'Cambiar a tema claro');
+  } else {
+    document.body.classList.remove('dark-theme');
+    iconoTema.src = './images/icon-moon.svg';
+    botonCambioTema.setAttribute('aria-label', 'Cambiar a tema oscuro');
+  }
+})();

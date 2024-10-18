@@ -1,3 +1,10 @@
+/*Importacio de fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*Fonts poppin*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 /* Reset CSS */
 * {
   margin: 0;
@@ -41,10 +48,182 @@ table {
   border-spacing: 0;
 }
 
+:root {
+  --primary-color: #0582ca;
+  --secondary-color: #006494;
+  --accent-color: #F1F3F5;
+  --text-color: #051923;
+  --font-size: 24px;
+  --font-poppins: "Poppins", sans-serif;
+  --font-pixel: 'Press Start 2P', 'cursive';
+}
+
+body {
+  background-color: #F8F9FA;
+  font-family: var(--font-poppins);
+  color: var(--text-color);
+}
+
+/*Diseño del header*/
+.header {
+  width: 100%;
+  padding: 1.2rem 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #555;
+}
+
+.header__logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-link:hover {
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+    /* Tamaño normal */
+  }
+
+  50% {
+    transform: scale(1.2);
+    /* Crecimiento en el centro */
+  }
+}
+
+.header__logo-image {
+  width: 100px;
+}
+
+.header__title {
+  font-family: var(--font-pixel);
+  font-size: 16px;
+}
+
+.header__title strong {
+  color: #E53935;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: end;
+}
+
+
+/*Estilos para el input de busqueda*/
+.header__search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--accent-color);
+  border: none;
+  padding: 0.2rem 0.9rem;
+  border-radius: 40px;
+}
+
+.header__search-input {
+  width: 90%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+}
+
+.header__search-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/*Estilos para el boton de cambiar el tema*/
+.header__theme-toggle,
+.header__login {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.header__login {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0.4rem 0.7rem;
+  color: #fff;
+  background-color: #2563EB;
+  transition: all 0.4s;
+}
+
+.header__login:hover {
+  transform: translate(0, -4px);
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*Estilos para tamaño table*/
+@media(max-width:1024px) {
+  .header {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+/*Estilos para tamaño movil*/
+@media(max-width: 768px) {
+  .header {
+    padding: 0.6rem 2%;
+  }
+
+  .header__nav {
+    justify-content: center;
+
+  }
+
+  .header__search-form {
+    width: 50%;
+  }
+
+  .header__search-input {
+    font-size: 13px;
+    padding: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Estilos del tema oscuro */
 .dark-theme {
-  background-color: #000;
+  background-color: #16191D;
   color: #fff;
 }
 
-/* Agregar más estilos personalizados para el tema oscuro */
+.dark-theme .header {
+  background-color: var(--text-color);
+}
