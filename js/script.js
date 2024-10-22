@@ -1,6 +1,8 @@
-// Selección de elementos
+const searchIcon = document.getElementById('search-icon');
+const mobileSearch = document.getElementById('mobile-search');
 const botonCambioTema = document.querySelector('.header__theme-toggle');
 const iconoTema = document.querySelector('.header__theme-icon');
+
 
 // Cambiar entre tema claro y oscuro
 function cambiarTema() {
@@ -32,3 +34,8 @@ botonCambioTema.addEventListener('click', cambiarTema);
     botonCambioTema.setAttribute('aria-label', 'Cambiar a tema oscuro');
   }
 })();
+
+
+searchIcon.addEventListener('click', () => {
+  mobileSearch.style.display = mobileSearch.style.display === 'block' ? 'none' : 'block';
+});
