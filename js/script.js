@@ -39,3 +39,4 @@ botonCambioTema.addEventListener('click', cambiarTema);
 searchIcon.addEventListener('click', () => {
   mobileSearch.style.display = mobileSearch.style.display === 'block' ? 'none' : 'block';
 });
+
