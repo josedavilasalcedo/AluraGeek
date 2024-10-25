@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion de productos</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__logo-container">
+      <a href="index.html" class="header__logo-link">
+        <picture class="header__logo-picture">
+          <img class="header__logo-image" src="./images/cabecera/image 1.svg" alt="Logo de AluraGeek">
+        </picture>
+        <h1 class="header__title">Alura<strong>Geek</strong></h1>
+      </a>
+    </div>
+
+    <nav class="header__nav" aria-label="Navegación principal">
+
+      <button id="search-icon" class="search-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 64 64">
+          <!-- SVG del ícono de búsqueda -->
+          <path fill="#555"
+            d="M8.783 41.535c8.403 8.401 21.644 8.987 30.734 1.78l1.894 1.892l-1.573 1.572l12.844 12.843c-.478.756-.685 1.338-.446 1.575l.703.702c1.143 1.145 10.104-7.819 8.961-8.962l-.703-.701c-.237-.238-.818-.033-1.572.445L46.779 39.838l-1.572 1.572l-1.893-1.893c7.206-9.091 6.621-22.333-1.779-30.735c-9.044-9.043-23.708-9.043-32.752 0c-9.045 9.046-9.043 23.709 0 32.753m2.729-30.022c7.536-7.537 19.759-7.537 27.293 0c7.537 7.535 7.537 19.758 0 27.293c-7.536 7.538-19.755 7.536-27.293 0c-7.534-7.537-7.536-19.756 0-27.293" />
+        </svg>
+      </button>
+
+      <div id="mobile-search" class="mobile-search">
+        <form action="/search" method="GET" role="search">
+          <input type="text" name="query" placeholder="¿Qué deseas buscar?" aria-label="Buscar">
+          <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 64 64">
+              <!-- SVG del ícono de búsqueda -->
+              <path fill="#fff"
+                d="M8.783 41.535c8.403 8.401 21.644 8.987 30.734 1.78l1.894 1.892l-1.573 1.572l12.844 12.843c-.478.756-.685 1.338-.446 1.575l.703.702c1.143 1.145 10.104-7.819 8.961-8.962l-.703-.701c-.237-.238-.818-.033-1.572.445L46.779 39.838l-1.572 1.572l-1.893-1.893c7.206-9.091 6.621-22.333-1.779-30.735c-9.044-9.043-23.708-9.043-32.752 0c-9.045 9.046-9.043 23.709 0 32.753m2.729-30.022c7.536-7.537 19.759-7.537 27.293 0c7.537 7.535 7.537 19.758 0 27.293c-7.536 7.538-19.755 7.536-27.293 0c-7.534-7.537-7.536-19.756 0-27.293" />
+            </svg></button>
+        </form>
+      </div>
+
+      <button class="header_cars" aria-label="Ver carrito de compras">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="#000000"
+            d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37l-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1zM8.5 11H10V9H7.56zM11 9v2h3V9zm3-1V6h-3v2zm3.11 1H15v2h1zm1.67-3H15v2h2.67zM6.14 6l.94 2H10V6z" />
+        </svg>
+      </button>
+
+      <button class="header__login">
+        <img src="./images/MdiAccountCircle.svg" alt="Cuenta">
+        Login
+      </button>
+
+      <button class="header__theme-toggle" aria-label="Cambiar a tema oscuro">
+        <img class="header__theme-icon" src="./images/icon-moon.svg" alt="Icono para cambiar tema">
+      </button>
+
+    </nav>
+
+  </header>
+
+  <!-- Sección principal de la página de administración -->
+  <main class="admin-page products">
+
+    <section class="">
+      <!-- Lista de productos existentes con botones de editar y eliminar -->
+      <h2 class="admin-page__subtitle">Lista de Productos</h2>
+      <div class="admin-page_products">
+        <div class="admin-page__product-list">
+          <div class="admin-page__product-item">
+            <img class="admin-page__product-image" src="ruta/de/imagen.jpg" alt="Imagen del Producto">
+            <div class="admin-page__product-info">
+              <p class="admin-page__product-name">Nombre del Producto: <span>Producto 1</span></p>
+              <p class="admin-page__product-price">Precio: <span>$100</span></p>
+              <p class="admin-page__product-description">Descripción: <span>Descripción del producto 1</span></p>
+            </div>
+            <div class="admin-page__buttons">
+              <button class="admin-page__button admin-page__button--edit">Editar</button>
+              <button class="admin-page__button admin-page__button--delete">Eliminar</button>
+            </div>
+          </div>
+        </div>
+        <div class="admin-page__product-list">
+          <div class="admin-page__product-item">
+            <img class="admin-page__product-image" src="ruta/de/imagen.jpg" alt="Imagen del Producto">
+            <div class="admin-page__product-info">
+              <p class="admin-page__product-name">Nombre del Producto: <span>Producto 1</span></p>
+              <p class="admin-page__product-price">Precio: <span>$100</span></p>
+              <p class="admin-page__product-description">Descripción: <span>Descripción del producto 1</span></p>
+            </div>
+            <div class="admin-page__buttons">
+              <button class="admin-page__button admin-page__button--edit">Editar</button>
+              <button class="admin-page__button admin-page__button--delete">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="admin-page__section">
+      <h2 class="admin-page__title">Agregar Producto</h2>
+
+      <!-- Formulario para añadir un nuevo producto -->
+      <form class="admin-page__form" action="/add-product" method="POST" enctype="multipart/form-data">
+
+        <label class="admin-page__label" for="product-name">Nombre del Producto:</label>
+        <input class="admin-page__input" type="text" id="product-name" name="product-name" required>
+
+        <label class="admin-page__label" for="product-description">Descripción:</label>
+        <textarea class="admin-page__textarea" id="product-description" name="product-description" required></textarea>
+
+        <label class="admin-page__label" for="product-price">Precio:</label>
+        <input class="admin-page__input" type="number" id="product-price" name="product-price" required>
+
+        <label class="admin-page__label" for="product-image">Imagen del Producto:</label>
+        <input class="admin-page__input" type="file" id="product-image" name="product-image" accept="image/*" required>
+
+        <div class="admin-page__buttons">
+          <button class="admin-page__button admin-page__button--add" type="submit">Agregar Producto</button>
+          <button class="admin-page__button admin-page__button--clear" type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__logo-container">
+      <picture class="footer__logo-picture">
+        <img class="footer__logo-image" src="./images/cabecera/image 1.svg" alt="Logo de AluraGeek">
+      </picture>
+      <h4 class="footer__title">Alura<strong>Geek</strong></h4>
+    </div>
+    <small class="footer__credits">Desarrollado por Jose Davila</small>
+    <p class="footer__year">ALURA LATAM 2024</p>
+  </footer>
+
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

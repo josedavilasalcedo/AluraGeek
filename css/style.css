@@ -169,11 +169,8 @@ body {
   width: 100%;
   max-width: 500px;
   background-color: var(--accent-color);
-  /* Fondo más moderno */
   border-radius: 50px;
-  padding: 0.2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
   transition: box-shadow 0.3s ease;
 }
 
@@ -202,7 +199,7 @@ body {
 
 
 .mobile-search button[type="submit"] {
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   border: none;
   border-radius: 50px;
   background-color: var(--primary-color);
@@ -245,6 +242,7 @@ body {
 }
 
 .header__login {
+  min-width: max-content;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -343,7 +341,7 @@ body {
 .products__cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 25px;
   justify-content: center;
   align-items: center;
 }
@@ -440,6 +438,220 @@ body {
   display: none;
 }
 
+/*Estilos para el footer*/
+.footer {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--text-color);
+  color: var(--accent-color);
+}
+
+.footer__logo-container {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-pixel);
+}
+
+.footer__title strong {
+  color: #E53935;
+}
+
+.footer__credits {
+  font-size: 1.2rem;
+}
+
+/*Estilos para la pagina de admin*/
+
+.admin-page {
+  align-items: start;
+}
+
+.admin-page_products {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.admin-page__title {
+  font-family: var(--font-pixel);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Estilos generales */
+.admin-page__form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-page__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
+
+.admin-page__input,
+.admin-page__textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-page__input:focus,
+.admin-page__textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+.admin-page__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.admin-page__buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-page__button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.admin-page__button--add {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.admin-page__button--clear {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+.admin-page__button:hover {
+  transform: translateY(-2px);
+}
+
+.admin-page__button--add:hover {
+  background-color: #43a047;
+}
+
+.admin-page__button--clear:hover {
+  background-color: #e53935;
+}
+
+/* Estilos de la lista de productos */
+
+.admin-page__subtitle {
+  font-family: var(--font-pixel);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin-page__product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-page__product-item {
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-page__product-name,
+.admin-page__product-price,
+.admin-page__product-description {
+  font-size: 1rem;
+  color: #333333;
+}
+
+.admin-page__product-name span,
+.admin-page__product-price span,
+.admin-page__product-description span {
+  font-weight: 600;
+  color: #4caf50;
+}
+
+.admin-page__button--edit,
+.admin-page__button--delete {
+  margin-top: 0.5rem;
+  width: 100px;
+  font-size: 0.9rem;
+}
+
+.admin-page__button--edit {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+.admin-page__button--edit:hover {
+  background-color: #1976d2;
+}
+
+.admin-page__button--delete {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+.admin-page__button--delete:hover {
+  background-color: #e53935;
+}
+
+/* Posicionamiento de botones en fila */
+.admin-page__product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-page__product-info {
+  flex-grow: 1;
+}
+
+.admin-page__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
 
 
 /*Estilos para tamaño tablet*/
@@ -490,7 +702,7 @@ body {
     display: none;
     margin: 0 auto;
     position: fixed;
-    top: 144px;
+    top: 82px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -505,6 +717,21 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+  }
+
+  .mobile-search form {
+    max-width: 100%;
+  }
+}
+
+@media(max-width: 390px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-search {
+    top: 142px;
   }
 }
 
