@@ -1,0 +1,52 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Consola Atari",
+      "descripcion": "Consola de video juego portátil.",
+      "precio": 50.00,
+      "descuento": 10,
+      "imagen": "./images/banner-2.jpg",
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "PlayStation 5",
+      "descripcion": "Consola de videojuegos de última generación.",
+      "precio": 500.00,
+      "descuento": 5,
+      "imagen": "./images/banner-3.jpg",
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "Figura de acción",
+      "descripcion": "Figura de acción de un personaje famoso.",
+      "precio": 450.00,
+      "descuento": 8,
+      "imagen": "./images/banner-1.jpg",
+      "disponible": false
+    }
+    ,
+    {
+      "id": 4,
+      "nombre": "Figura de acción",
+      "descripcion": "Figura de acción de un personaje famoso.",
+      "precio": 450.00,
+      "descuento": 8,
+      "imagen": "./images/game.jpg",
+      "disponible": false
+    }
+
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Jose Davila",
+      "email": "jose@example.com",
+      "username": "jose", 
+      "password": "123456", 
+      "rol": "admin"
+    }
+  ]
+}

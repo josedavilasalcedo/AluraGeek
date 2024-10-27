@@ -46,12 +46,14 @@
           <path fill="#000000"
             d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37l-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1zM8.5 11H10V9H7.56zM11 9v2h3V9zm3-1V6h-3v2zm3.11 1H15v2h1zm1.67-3H15v2h2.67zM6.14 6l.94 2H10V6z" />
         </svg>
+        <span id="cart-count" class="cart-count">0</span>
       </button>
 
-      <a href="add-productos.html" class="header__login">
+      <button id="login-button" class="header__login">
         <img src="./images/MdiAccountCircle.svg" alt="Cuenta">
-        Login..
-      </a>
+        Login
+      </button>
+
 
       <button class="header__theme-toggle" aria-label="Cambiar a tema oscuro">
         <img class="header__theme-icon" src="./images/icon-moon.svg" alt="Icono para cambiar tema">
@@ -60,6 +62,33 @@
     </nav>
 
   </header>
+
+  <!-- Modal de Login -->
+  <div id="login-modal" style="display: none;">
+    <div class="modal-content">
+      <span id="close-modal" class="close-button">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Nombre de usuario" autocomplete="username" required>
+        <input type="password" id="password" placeholder="Contraseña" autocomplete="current-password" required>
+        <button type="submit">Iniciar sesión</button>
+      </form>
+
+      <p id="error-message"></p>
+    </div>
+  </div>
+
+  <div id="cart-modal" class="cart-modal hidden" aria-hidden="true">
+    <div class="cart-modal__content">
+      <button id="close-cart" class="cart-modal__close" aria-label="Cerrar carrito">&times;</button>
+      <h2>Tu Carrito</h2>
+      <ul id="cart-items" class="cart-modal__items">
+        <!-- Aquí se agregan los productos del carrito -->
+      </ul>
+      <p class="cart-modal__total">Total: $<span id="cart-total">0</span></p>
+      <button class="cart-modal__checkout">Proceder al pago</button>
+    </div>
+  </div>
 
 
   <div class="banner">
@@ -80,102 +109,6 @@
 
       <!--Contenedor de las tarjetas-->
       <div class="products__cards">
-
-        <div class="card">
-          <img src="./images/banner-2.jpg" alt="Nombre del producto" />
-          <div class="card-container--info">
-            <p class="card-container--name">Atari</p>
-            <p class="card-container--description">Consola de video juego portatil.</p>
-
-            <div class="card-container--value">
-              <p class="card-container--price">$ 00.00</p>
-              <p class="card-container--discount">Descuento: 10%</p>
-            </div>
-
-            <div class="card-container--actions">
-              <span class="card-container--availability">En Stock</span>
-              <button class="card-container--add-to-cart">Añadir al carrito</button>
-              <img src="./images/icon-delete.svg" alt="Eliminar producto" class="card-container--delete" />
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./images/unsplash_6FDXGY9J6y4.svg" alt="Nombre del producto" />
-          <div class="card-container--info">
-            <p class="card-container--name">Atari</p>
-            <p class="card-container--description">Consola de video juego portatil.</p>
-
-            <div class="card-container--value">
-              <p class="card-container--price">$ 00.00</p>
-              <p class="card-container--discount">Descuento: 10%</p>
-            </div>
-
-            <div class="card-container--actions">
-              <span class="card-container--availability">Agotado</span>
-              <button class="card-container--add-to-cart">Añadir al carrito</button>
-              <img src="./images/icon-delete.svg" alt="Eliminar producto" class="card-container--delete" />
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./images/banner-3.jpg" alt="Nombre del producto" />
-          <div class="card-container--info">
-            <p class="card-container--name">Atari</p>
-            <p class="card-container--description">Consola de video juego portatil.</p>
-
-            <div class="card-container--value">
-              <p class="card-container--price">$ 00.00</p>
-              <p class="card-container--discount">Descuento: 10%</p>
-            </div>
-
-            <div class="card-container--actions">
-              <span class="card-container--availability">Agotado</span>
-              <button class="card-container--add-to-cart">Añadir al carrito</button>
-              <img src="./images/icon-delete.svg" alt="Eliminar producto" class="card-container--delete" />
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./images/game-3501200_1280.jpg" alt="Nombre del producto" />
-          <div class="card-container--info">
-            <p class="card-container--name">Atari</p>
-            <p class="card-container--description">Consola de video juego portatil.</p>
-
-            <div class="card-container--value">
-              <p class="card-container--price">$ 00.00</p>
-              <p class="card-container--discount">Descuento: 10%</p>
-            </div>
-
-            <div class="card-container--actions">
-              <span class="card-container--availability">Agotado</span>
-              <button class="card-container--add-to-cart">Añadir al carrito</button>
-              <img src="./images/icon-delete.svg" alt="Eliminar producto" class="card-container--delete" />
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./images/game-3501200_1280.jpg" alt="Nombre del producto" />
-          <div class="card-container--info">
-            <p class="card-container--name">Atari</p>
-            <p class="card-container--description">Consola de video juego portatil.</p>
-
-            <div class="card-container--value">
-              <p class="card-container--price">$ 00.00</p>
-              <p class="card-container--discount">Descuento: 10%</p>
-            </div>
-
-            <div class="card-container--actions">
-              <span class="card-container--availability">Agotado</span>
-              <button class="card-container--add-to-cart">Añadir al carrito</button>
-              <img src="./images/icon-delete.svg" alt="Eliminar producto" class="card-container--delete" />
-            </div>
-          </div>
-        </div>
-
 
       </div>
 

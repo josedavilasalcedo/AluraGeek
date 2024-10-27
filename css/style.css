@@ -222,6 +222,8 @@ body {
 
 
 .header_cars {
+  position: relative;
+  /* Posiciona el contador en relación al botón del carrito */
   display: flex;
   align-items: center;
   border: 2px solid transparent;
@@ -234,6 +236,22 @@ body {
 
 .header_cars:hover svg path {
   fill: var(--primary-color);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  /* Ajusta la posición según sea necesario */
+  right: -8px;
+  background-color: #E53935;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__menu {
@@ -654,6 +672,34 @@ body {
 }
 
 
+/* Estilos básicos para el modal */
+#login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 300px;
+  width: 90%;
+}
+
+.close-button {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
 /*Estilos para tamaño tablet*/
 @media(max-width: 1024px) {
   .header {
@@ -742,6 +788,35 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+/*Estilos para la modal del carrito*/
+.hidden {
+  display: none;
+}
+
+.cart-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  color: var(--text-color);
+}
+
+.cart-modal__content {
+  padding: 20px;
+}
+
+.cart-modal__close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 
 /* Estilos del tema oscuro */
 .dark-theme {
